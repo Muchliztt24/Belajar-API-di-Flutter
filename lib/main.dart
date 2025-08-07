@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:latihan_api/pages/auth/login_screen.dart';
-import 'package:latihan_api/pages/post/list_post_screen.dart';
+import 'package:latihan_api/pages/menu_screen.dart';
+// import 'package:latihan_api/pages/post/list_post_screen.dart';
 import 'package:latihan_api/services/auth_service.dart';
 
 void main() {
@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Auth Example',
-      home: AuthCheck(), 
+      debugShowCheckedModeBanner: false,
+      title: 'Belajar Flutter',
+      home: AuthCheck(),
     );
   }
 }
@@ -47,9 +48,9 @@ class _AuthCheckState extends State<AuthCheck> {
             body: Center(child: CircularProgressIndicator()),
           );
         } else if (snapshot.hasData && snapshot.data == true) {
-          return const ListPostScreen(); 
+          return MenuScreen();
         } else {
-          return LoginScreen(); 
+          return LoginScreen();
         }
       },
     );
